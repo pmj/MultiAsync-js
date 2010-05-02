@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>8 - We can, 2/2</title>
+<link rel="stylesheet" type="text/css" href="talk.css">
+<link rel="next" href="9.html">
+<link rel="prev" href="7.html">
+</head>
+<body>
+<h1>We can, part 2</h1>
+
+<div class="javascript"><ol><li class="li1"><div class="de1">&nbsp; <span class="co1">// returns a function to be used as an async callback</span></div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="co1">// final callback triggers when all these have been called</span></div></li>
+<li class="li1"><div class="de1">&nbsp; cb<span class="sy0">:</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw2">var</span> idx <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">next_idx</span><span class="sy0">++;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">waiting</span><span class="sy0">++;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw2">var</span> handler <span class="sy0">=</span> <span class="kw1">this</span><span class="sy0">,</span> &nbsp;chained_cbs <span class="sy0">=</span> arguments<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp;</div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">return</span> <span class="kw2">function</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span><span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; handler.<span class="me1">args</span><span class="br0">&#91;</span>idx<span class="br0">&#93;</span> <span class="sy0">=</span> data<span class="sy0">;</span> <span class="co1">// remember argument</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; </div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">--</span>handler.<span class="me1">waiting</span> <span class="sy0">==</span> <span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> handler.<span class="me1">final_cb</span><span class="br0">&#41;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; handler.<span class="me1">final_cb</span>.<span class="me1">apply</span><span class="br0">&#40;</span>handler.<span class="me1">final_cb_this</span><span class="sy0">,</span> handler.<span class="me1">args</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; </div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="co1">// forward to any extra callbacks</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw2">var</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> chained_cbs.<span class="me1">length</span><span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">&#41;</span> </div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; chained_cbs<span class="br0">&#91;</span>i<span class="br0">&#93;</span>.<span class="me1">apply</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> arguments<span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="br0">&#125;</span><span class="sy0">,</span></div></li>
+<li class="li1"><div class="de1">&nbsp;</div></li>
+</ol></div>
+</body></html>

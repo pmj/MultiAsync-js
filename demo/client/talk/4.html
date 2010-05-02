@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4 - Solution: The Bad</title>
+<link rel="stylesheet" type="text/css" href="talk.css">
+<link rel="next" href="5.html">
+<link rel="prev" href="3.html">
+</head>
+<body>
+<h1>Solution?</h1>
+
+<div class="javascript"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> all_users<span class="sy0">,</span> all_scores<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp;</div></li>
+<li class="li1"><div class="de1"><span class="kw2">function</span> showUserScores<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="kw2">var</span> user_scores <span class="sy0">=</span> matchScoresToUsers<span class="br0">&#40;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; all_scores<span class="sy0">,</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; all_users<span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; showScores<span class="br0">&#40;</span>user_scores<span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">jQuery.<span class="me1">getJSON</span><span class="br0">&#40;</span><span class="st0">&quot;/users&quot;</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>users<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; all_users <span class="sy0">=</span> users<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; showUsers<span class="br0">&#40;</span>users<span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>all_scores<span class="br0">&#41;</span> showUserScores<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">jQuery.<span class="me1">getJSON</span><span class="br0">&#40;</span><span class="st0">&quot;/scores&quot;</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>score_data<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; all_scores <span class="sy0">=</span> score_data<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>all_users<span class="br0">&#41;</span> showUserScores<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp;</div></li>
+</ol></div>
+
+</body>

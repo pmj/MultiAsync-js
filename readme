@@ -1,0 +1,11 @@
+MultiAsync-js AsyncHandler
+
+Simple class for running a handler after completion of multiple asynchronous events in JavaScript.
+
+Subject to MIT license (like jQuery), and should run on most JavaScript implementations, including browsers. AsyncHandler is thread safe when run on Rhino and the sync() function is present (which is not the case for all ways of invoking Rhino - see the Rhino docs for details).
+
+I first presented it at the first ever vienna.js meetup on 10 Feb 2010.
+
+Phil Jordan
+phil@philjordan.eu
+

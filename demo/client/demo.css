@@ -1,0 +1,12 @@
+.e
+{
+    background-color:red;
+    color:white;
+    font-weight:bold;
+    padding:1em;
+}
+
+td.done
+{
+    background-color:green;
+}

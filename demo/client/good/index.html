@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multi-async demo &quot;The Good&quot;</title>
+<link rel="stylesheet" type="text/css" href="../demo.css">
+</head>
+<body>
+<table>
+<tr>
+    <td id="0" class="e">0</td>
+    <td class="e" rowspan="3" id="012">0 1 2</td>
+    <td></td>
+    <td class="e" rowspan="5" id="01234">0 1 2 3 4</td>
+</tr>
+<tr>
+    <td class="e" id="1">1</td>
+</tr>
+<tr>
+    <td class="e" id="2">2</td><td class="e" rowspan="3" id="234">2 3 4</td>
+</tr>
+<tr>
+    <td class="e" id="3">3</td>
+</tr>
+<tr>
+    <td class="e" id="4">4</td>
+</tr>
+</table>
+<p><input type="button" id="start" value="start"></p>
+<script src="/lib/jquery-1.4.1.min.js" type="application/javascript"></script>
+<script src="../multiasync.js" type="application/javascript"></script>
+<script src="./good.js" type="application/javascript"></script>
+</body>
+</html>
